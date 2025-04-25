@@ -1,0 +1,85 @@
+---
+import { Image } from "astro:assets";
+
+import heroBg from "../images/hero-bg.png";
+interface Props {
+  title?: string;
+  subtitle?: string;
+  description?: string;
+  buttonText?: string;
+  buttonLink?: string;
+}
+
+const {
+  title = "ETHEREUM",
+  subtitle = "EVOLVED",
+  buttonText = "EXPLORE USE CASES",
+  buttonLink = "#",
+} = Astro.props;
+
+---
+
+<section
+  class="relative bg-black text-white overflow-hidden h-[calc(100vh-6rem)] flex items-center"
+>
+  <!-- Background Image -->
+  <div class="absolute inset-0 z-0">
+    <Image
+      src={heroBg}
+      alt="Hero Background"
+      class="w-full h-full object-cover object-center"
+      width={1920}
+      height={1080}
+    />
+  </div>
+
+  <!-- Content -->
+  <div
+    class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+  >
+    <div class="flex flex-col md:flex-row justify-between h-full">
+      <!-- Left Column) -->
+      <div class="md:w-1/2 mb-12 md:mb-0 flex items-center justify-center">
+      </div>
+      <div class="md:w-[296px] text-right flex flex-col gap-16 h-full justify-center">
+        <div class="mb-8 text-end">
+          <h1
+            class="font-ndot text-[48px] tracking-wide text-white leading-none ml-auto"
+          >
+            {title}
+          </h1>
+          <h2
+            class="font-ndot text-[48px] max-w-[230px] tracking-wide bg-orange-500 text-black leading-none ml-auto"
+          >
+            {subtitle}
+          </h2>
+        </div>
+
+        <!-- Description text -->
+        <div class="mb-12 font-vcr space-y-4 text-uppercase">
+          <div class="text-xl tracking-wide text-white whitespace-pre-line">
+            <p class="text-xl text-orange-500">DROSERA</p>
+            <p class="text-xl text-white">PROVIDES SMART CONTRACT INFRASTRUCTURE</p>
+            </p>
+          </div>
+          <div class="text-xl tracking-wide text-white whitespace-pre-line">
+            <p class="text-xl text-white">AN AUTOMATION PROTOCOL BUILT TO MAINTAIN ETHEREUM'S FOUNDATIONAL ETHOS</p>
+          </div>
+        </div>
+
+
+        <div>
+          <a
+            href={buttonLink}
+            class="inline-block px-8 py-2 border border-white text-base font-ndot text-white hover:bg-white hover:bg-opacity-10 hover:text-black transition-all duration-150 relative"
+          >
+            <span>{buttonText}</span>
+            <!-- <span class="absolute -top-1 -right-2 text-pink-500 font-bold"
+              >→</span
+            > -->
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

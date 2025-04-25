@@ -1,0 +1,75 @@
+---
+
+interface Props {
+  activePage?: "team" | "operators" | "caseStudies" | "contact" | "home";
+}
+
+const { activePage = "home" } = Astro.props;
+---
+
+<footer
+  class="fixed bottom-0 left-0 right-0 z-40 bg-black text-white"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+    <div class="flex flex-col md:flex-row justify-between items-center">
+    
+      <div
+        class="hidden md:flex md:items-center justify-between w-full text-[20px]"
+      >
+        <a
+          href="/team"
+          class={`px-3 py-2 font-ndot uppercase relative text-white hover:text-orange-500`}
+        >
+          Team
+          {
+            activePage === "team" && (
+              <span class="absolute bottom-0 left-0 w-full h-0.5 bg-orange-500" />
+            )
+          }
+        </a>
+        <a
+          href="/operators"
+          class={`px-3 py-2 font-ndot uppercase relative text-white hover:text-orange-500`}
+        >
+          Operators
+          {
+            activePage === "operators" && (
+              <span class="absolute bottom-0 left-0 w-full h-0.5 bg-orange-500" />
+            )
+          }
+        </a>
+        <a
+          href="/case-studies"
+          class={`px-3 py-2 font-ndot uppercase relative text-white hover:text-orange-500`}
+        >
+          Case Studies
+          {
+            activePage === "caseStudies" && (
+              <span class="absolute bottom-0 left-0 w-full h-0.5 bg-orange-500" />
+            )
+          }
+        </a>
+        <a
+          href="/contact"
+          class={`px-3 py-2 font-ndot uppercase relative text-white hover:text-orange-500`}
+        >
+          Contact
+          {
+            activePage === "contact" && (
+              <span class="absolute bottom-0 left-0 w-full h-0.5 bg-orange-500" />
+            )
+          }
+        </a>
+      </div>
+
+      <!-- Copyright on right -->
+      <!-- <div class="text-gray-500 text-xs mt-4 md:mt-0">
+        <p>© {currentYear} <span class="font-ndot">DROSERA</span></p>
+      </div> -->
+    </div>
+  </div>
+</footer>
+
+<!-- Add padding to the bottom of the page to account for the fixed footer -->
+<div class="pb-16"></div>
+

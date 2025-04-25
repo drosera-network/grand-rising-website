@@ -1,0 +1,28 @@
+/* Font Declarations */
+
+/* ndot-47 Font */
+@font-face {
+  font-family: 'ndot-47';
+  src: url('/fonts/ndot-47-inspired-by-nothing.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* VCR OSD Mono Font */
+@font-face {
+  font-family: 'VCR OSD Mono';
+  src: url('/fonts/VCR_OSD_MONO.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Utility classes for using these fonts */
+.font-ndot {
+  font-family: 'ndot-47', monospace;
+}
+
+.font-vcr {
+  font-family: 'VCR OSD Mono', monospace;
+} 

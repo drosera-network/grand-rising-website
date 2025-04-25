@@ -1,0 +1,13 @@
+@import "tailwindcss";
+@import "./fonts.css";
+
+/* Custom Tailwind font utility classes */
+@layer utilities {
+  .font-ndot {
+    font-family: 'ndot-47', monospace;
+  }
+  
+  .font-vcr {
+    font-family: 'VCR OSD Mono', monospace;
+  }
+}

@@ -1,0 +1,39 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeroFeature from '../components/HeroFeature.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import VisionSection from '../components/VisionSection.astro';
+import TrapsSection from '../components/TrapsSection.astro';
+import DevelopersSection from '../components/DevelopersSection.astro';
+---
+
+<Layout title="Grand Rising - Home" class="bg-black">
+	<!-- Navbar with scrolling sections -->
+	<Navbar activeSection="home" />
+
+	<!-- Add padding to account for fixed navbar -->
+	<div class="pt-16">
+		<!-- Main Hero Section -->
+		<HeroFeature 
+			title="ETHEREUM" 
+			subtitle="EVOLVED"
+			
+			buttonText="EXPLORE USE CASES"
+			buttonLink="#vision"
+		/>
+		
+		<!-- Vision Section -->
+		<VisionSection />
+		
+		<!-- Traps Section -->
+		<TrapsSection />
+		
+		<!-- Developers Section -->
+		<DevelopersSection />
+		
+	</div>
+	
+	<!-- Footer -->
+	<Footer activePage="home" />
+</Layout>
