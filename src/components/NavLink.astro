@@ -1,0 +1,43 @@
+---
+
+type Props = {
+  href: string;
+  class: string;
+};
+
+const { href, class: className, ...props } = Astro.props;
+
+const { pathname } = Astro.url;
+const isActive = pathname === href;
+
+---
+
+<a
+  href={href}
+  class:list={[className, { active: isActive }]}
+  {...props}
+>
+  <slot />
+</a>
+
+<style>
+  a {
+    display: inline-block;
+    text-decoration: none;
+    position: relative;
+  }
+
+  a.active {
+    font-weight: 700;
+  }
+
+  a.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #f97316; /* orange-500 */
+  }
+</style>
